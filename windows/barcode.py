@@ -142,14 +142,16 @@ else:  # returned error
 
 if write_files:
     # get product type
-    if barcode[0] == '1' or barcode[0] == '5':  # 1xxx_xxxx or 5xxx_xxxx
-        product = 'Proto, use non-barcode method'
+    if barcode[0] == '1':  # 1xxx_xxxx
+        product = 'S2M2-S16'
     elif barcode[0] == '2':  # 2xxx_xxxx
         product = 'S2M2-S16'
     elif barcode[0] == '3':  # 3xxx_xxxx
         product = 'S2LP-S16'
     elif barcode[0] == '4':  # 4xxx_xxxx
         product = 'S2LP-D16'
+    elif barcode[0] == '5':  # 5xxx_xxxx
+        product = 'Proto, use non-barcode method'
     else:
         product = 'Invalid'
     print('Card: ' + product)
