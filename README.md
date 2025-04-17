@@ -8,4 +8,8 @@ hex-ftdi-cfg/hex
 - Copy all P... and .fcf files
 - Paste into windows/hex-ftdi-cfg/hex/
 
-The End
+hex-ftdi-cfg/ftdi
+- TBD
+
+Sincerely,
+HJS
