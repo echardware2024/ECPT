@@ -20,6 +20,7 @@ echo.
 color 07
 
 echo Confirm the serial number above, then connect the USB to the linux machine to continue.
+del ftdi.xml
 echo.
 echo Done.
 pause
