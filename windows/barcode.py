@@ -44,6 +44,7 @@ if len(sys.argv) == 2:  # exactly one arg
     barcode = sys.argv[1]  # barcode is only arg
     print('[' + barcode + '] ', end ='')
 else:
+    print('Scan barcode to continue')
     barcode = getbarcode()  # read from input
 bcerror = validate(barcode)
 if bcerror == '':  # no error

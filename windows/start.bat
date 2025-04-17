@@ -1,6 +1,6 @@
 @echo off
 
-python.exe read.py
+python.exe barcode.py
 
 echo.
 echo Done.
