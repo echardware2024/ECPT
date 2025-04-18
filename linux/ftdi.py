@@ -22,7 +22,7 @@ if len(lines) == 2 and 'iProduct' in lines[0] and 'iSerial' in lines[1]:
     product_stripped = lines[0].strip()
     prod = product_stripped[-8:]
     product = check_product(product_stripped[-8:])
-    print(product + ' (' + prod + ')')
+    print(product + ' "' + prod + '"')
 
     serial_stripped = lines[1].strip()
     sn = serial_stripped [-8:]
