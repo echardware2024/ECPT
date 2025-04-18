@@ -10,5 +10,8 @@ cat ./cfg.edit | picocom -qrix 100 /dev/ttyUSB0  # send
 
 # End
 
-# debug: skip to end of current attempt
+# debug, skip to end of current attempt:
 # echo "/" | picocom -qrix 100 /dev/ttyUSB0
+
+# test:
+# cd ~/ECPT/linux/ && source ./lsusb.sh
