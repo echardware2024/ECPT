@@ -5,8 +5,8 @@ prodtest/bin
 - Paste into linux/prodtest/bin/
 
 hex-ftdi-cfg/hex
-- Copy all P... and .fcf files
-- Paste into windows/hex-ftdi-cfg/hex/
+- Copy three P... and one .fcf file
+- Paste into windows/
 
 hex-ftdi-cfg/ftdi
 - TBD
