@@ -37,11 +37,16 @@ if len(lines) == 2 and 'iProduct' in lines[0] and 'iSerial' in lines[1]:
     # print(serial)
     print('Writing cfg-edit using ' + product + ' ' + serial + ' ' + date)
     serialint = int(serial)
+    cfgedit = ''
     if serialint < 10000000:  # has leading zero, do nothing
-        cfgedit = ''
-    elif serialint >= 10000000 and serialint < 20000000:  # 10000 10014 10015
+        pass
+    elif serialint >= 10000004 and serialint < 10000005:  # 10000 test cases, reflashed from 10015 original lot
         print('1x serial')
         cfglist = ['cfg -unlock', 'cfg edit', 'S2M2', 'S16NFN', serial[0:5] + '-EC-' + serial[5:8], serial, '1', '5', '1066', '2.01',  date, date, '1', '0', '2', '800', '1', '0', '550', '2', '0', '1', '97', '85', '85', '1', '1', 'C']
+        cfgedit = '\n'.join(cfglist) + '\n'
+    elif serialint >= 10000190 and serialint < 10000255:  # 10000 FGI, Lovettsville/Leesburg
+        print('1x serial')
+        cfglist = ['cfg -unlock', 'cfg edit', 'S2M2', 'S16NFN', serial[0:5] + '-EC-' + serial[5:8], serial, '1', '5', '1066', '2.02',  date, date, '1', '0', '2', '800', '1', '0', '550', '2', '0', '1', '98', '85', '85', '1', '1', 'C']
         cfgedit = '\n'.join(cfglist) + '\n'
     elif serialint >= 20000000 and serialint < 30000000:  # 10000 10014 10015
         print('2x serial')
