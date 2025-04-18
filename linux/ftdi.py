@@ -41,7 +41,7 @@ if len(lines) == 2 and 'iProduct' in lines[0] and 'iSerial' in lines[1]:
         cfgedit = ''
     elif serialint >= 10000000 and serialint < 20000000:  # 10000 10014 10015
         print('1x serial')
-        cfglist = ['cfg -unlock', 'cfg edit', 'S2M2', 'S16NFN', serial[0:5] + '-EC' + serial[5:8], serial, '1', '5', '1066', '2.01',  date, date, '1', '0', '2', '800', '1', '0', '550', '2', '0', '1', '97', '85', '85', '1', '1', 'C']
+        cfglist = ['cfg -unlock', 'cfg edit', 'S2M2', 'S16NFN', serial[0:5] + '-EC-' + serial[5:8], serial, '1', '5', '1066', '2.01',  date, date, '1', '0', '2', '800', '1', '0', '550', '2', '0', '1', '97', '85', '85', '1', '1', 'C']
         cfgedit = '\n'.join(cfglist) + '\n'
     elif serialint >= 20000000 and serialint < 30000000:  # 10000 10014 10015
         print('2x serial')
