@@ -14,4 +14,4 @@ cat ./cfg.edit | picocom -qrix 100 /dev/ttyUSB0  # send
 # echo "/" | picocom -qrix 100 /dev/ttyUSB0
 
 # test:
-# cd ~/ECPT/linux/ && source ./lsusb.sh
+# cd ~/ECPT/linux/ && source ./_start.sh
