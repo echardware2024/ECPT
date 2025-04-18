@@ -1,4 +1,5 @@
 # read two lines of FTDI, write cfg-edit
+from datetime import datetime
 
 def check_product(s):
     products = ['S2M2-S16', 'S2LP-S16', 'S2LP-D16']
@@ -17,6 +18,8 @@ def check_serial(s):
 # End
 
 # Start of script
+date = datetime.now().strftime("%Y%m%d")
+
 with open('lsusb.ftdi', 'r') as f:
     lines = f.readlines()
 # print('tinyusb')  # debug
@@ -26,12 +29,13 @@ if len(lines) == 2 and 'iProduct' in lines[0] and 'iSerial' in lines[1]:
     product_stripped = lines[0].strip()
     prod = product_stripped[-8:]
     product = check_product(prod)
-    print(product)
+    # print(product)
 
     serial_stripped = lines[1].strip()
     sn = serial_stripped [-8:]
     serial = check_serial(sn)
-    print(serial)
+    # print(serial)
+    print('Writing cfg-edit using ' + product + ' ' + serial + ' ' + date)
 else:    
     print('Invalid FTDI settings')
 
