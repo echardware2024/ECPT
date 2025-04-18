@@ -38,17 +38,21 @@ if len(lines) == 2 and 'iProduct' in lines[0] and 'iSerial' in lines[1]:
     print('Writing cfg-edit using ' + product + ' ' + serial + ' ' + date)
     serialint = int(serial)
     if serialint < 10000000:  # has leading zero, do nothing
-        pass
+        cfgedit = ''
     elif serialint >= 10000000 and serialint < 20000000:  # 10000 10014 10015
         print('1x serial')
-        cfgedit = 'cfg -unlock\ncfg edit\nS2M2\n\S16NFN\n' + serial[0:5] + '-EC' + serial [5:8] + '1\n5\n0\n2.01\n' + date + '\n' + date + '\n1\n0\n2\n800\n1\n0\n550\n2\n0\n1\n99\n95\n85\n1\n1\nC\n'
-        print(cfgedit)
+        cfgedit = 'cfg -unlock\ncfg edit\nS2M2\nS16NFN\n' + serial[0:5] + '-EC' + serial [5:8] + '1\n5\n0\n2.01\n' + date + '\n' + date + '\n1\n0\n2\n800\n1\n0\n550\n2\n0\n1\n99\n95\n85\n1\n1\nC\n'
     elif serialint >= 20000000 and serialint < 30000000:  # 10000 10014 10015
         print('2x serial')
     elif serialint >= 30000000 and serialint < 40000000:  # 10000 10014 10015
         print('3x serial')
     elif serialint >= 40000000 and serialint < 50000000:  # 10000 10014 10015
         print('4x serial')
+    # write file
+    if len(cfgedit) > 0:  # make sure it contains chars
+        print('Failed to generate cfg-edit')
+    else:
+        print(cfgedit)
 else:    
     print('Invalid FTDI settings')
 
