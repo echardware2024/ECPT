@@ -37,15 +37,15 @@ if len(lines) == 2 and 'iProduct' in lines[0] and 'iSerial' in lines[1]:
     # print(serial)
     print('Writing cfg-edit using ' + product + ' ' + serial + ' ' + date)
     serialint = int(serial)
-    if serial < 10000000:  # has leading zero, do nothing
+    if serialint < 10000000:  # has leading zero, do nothing
         pass
-    elif serial >= 10000000 and serial < 20000000:  # 10000 10014 10015
+    elif serialint >= 10000000 and serial < 20000000:  # 10000 10014 10015
         print('1x serial')
-    elif serial >= 20000000 and serial < 30000000:  # 10000 10014 10015
+    elif serialint >= 20000000 and serial < 30000000:  # 10000 10014 10015
         print('2x serial')
-    elif serial >= 30000000 and serial < 40000000:  # 10000 10014 10015
+    elif serialint >= 30000000 and serial < 40000000:  # 10000 10014 10015
         print('3x serial')
-    elif serial >= 40000000 and serial < 50000000:  # 10000 10014 10015
+    elif serialint >= 40000000 and serial < 50000000:  # 10000 10014 10015
         print('4x serial')
 else:    
     print('Invalid FTDI settings')
