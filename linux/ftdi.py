@@ -51,6 +51,8 @@ if len(lines) == 2 and 'iProduct' in lines[0] and 'iSerial' in lines[1]:
     # write file
     if len(cfgedit) > 0:  # make sure it contains chars
         print(cfgedit)
+        with open('cfg.edit', 'w') as f:
+            f.write(cfgedit) 
     else:
         print('Failed to generate cfg-edit')
 else:    
