@@ -2,8 +2,11 @@
 
 def check_product(s):
     products = ['S2M2-S16', 'S2LP-S16', 'S2LP-D16']
+    old_products = ['S2M2']
     if s in products:
         return s
+    elif s in old_products:
+        return s[4:]  # remove " on "
     return 'Invalid product'
 # End
 
