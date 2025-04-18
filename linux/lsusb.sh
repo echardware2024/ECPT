@@ -9,3 +9,5 @@ picocom -qrX -b 115200 --flow x --send-cmd ascii-xfr /dev/ttyUSB0
 cat ./cfg.edit | picocom -qrix 100 /dev/ttyUSB0
 
 # End
+
+# echo "/" | picocom -qrix 100 /dev/ttyUSB0
