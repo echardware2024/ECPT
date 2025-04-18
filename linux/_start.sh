@@ -8,6 +8,8 @@ python3 ftdi.py  # creates cfg.edit with usb info and today's date
 picocom -qrX -b 115200 --flow x --send-cmd ascii-xfr /dev/ttyUSB0  # setup
 cat ./cfg.edit | picocom -qrix 100 /dev/ttyUSB0  # send
 
+printf "\nCycle power to load new cfg-edit parameters\n\n"
+
 # End
 
 # debug, skip to end of current attempt:
