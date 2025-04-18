@@ -50,9 +50,9 @@ if len(lines) == 2 and 'iProduct' in lines[0] and 'iSerial' in lines[1]:
         print('4x serial')
     # write file
     if len(cfgedit) > 0:  # make sure it contains chars
-        print('Failed to generate cfg-edit')
-    else:
         print(cfgedit)
+    else:
+        print('Failed to generate cfg-edit')
 else:    
     print('Invalid FTDI settings')
 
