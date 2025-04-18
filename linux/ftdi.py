@@ -6,7 +6,7 @@ def check_product(s):
     if s in products:
         return s
     elif s in old_products:
-        return s[4:]  # remove " on "
+        return s[4:] + '-S16'  # remove " on " and add S16
     return 'Invalid product'
 # End
 
