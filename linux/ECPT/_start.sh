@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo
+echo "Version 1.00"  # first release
+echo
+
 # get two lines of usb info then analyze
 lsusb -v -d 0403: 2> /dev/null | \grep -E "iProduct|iSerial" | awk '{$1=$1;print}' > ./lsusb.ftdi
 python3 ftdi2cfg.py  # creates cfg.edit with usb info and today's date

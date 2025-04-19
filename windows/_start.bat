@@ -1,5 +1,7 @@
 @echo off
 
+echo Version 1.00
+
 python.exe barcode.py
 
 echo.
